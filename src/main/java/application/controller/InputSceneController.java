@@ -13,13 +13,14 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/input")
 public class InputSceneController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String viewName = "/WEB-INF/views/input/input.html";
+	private String viewName = "/WEB-INF/view/input/input.html";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		RequestDispatcher dispatch = request.getRequestDispatcher(viewName);
+		
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; UTF-8");
-		RequestDispatcher dispatch = request.getRequestDispatcher(viewName);
 		dispatch.forward(request, response);
 	}
 
