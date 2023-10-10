@@ -14,36 +14,34 @@ import javax.servlet.http.HttpServletResponse;
 public class IndexSceneController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String homePage = "/WEB-INF/view/index.jsp";
-	private String inputPage = "/WEB-INF/view/input/input.html";
-	private String outputPage = "/WEB-INF/view/output/output.html";
+	private String inputServ = "./input";
+	private String outputServ = "./output";
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		HttpSession session = request.getSession();
 		RequestDispatcher dispatch = request.getRequestDispatcher(homePage);
 		
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; UTF-8");
 		
-		//リクエストごとの処理
 		Enumeration<String> parameterNames = request.getParameterNames();
-		while(parameterNames.hasMoreElements()) {
-			String paramName = parameterNames.nextElement().toString();
-			System.out.println(paramName);
+		if(parameterNames.hasMoreElements()) {
+			String paramName = parameterNames.nextElement();
+			
 			switch(paramName) {
 				case "input" -> {
-					dispatch = request.getRequestDispatcher(inputPage);				
+					response.sendRedirect(inputServ);
 				}
 				case "output" -> {
-					dispatch = request.getRequestDispatcher(outputPage);			
+					response.sendRedirect(outputServ);
 				}
 			}
 		}
-		dispatch.forward(request, response);
-
+		else {
+			dispatch.forward(request, response);
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }

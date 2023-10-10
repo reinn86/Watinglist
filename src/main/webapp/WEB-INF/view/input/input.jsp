@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,7 +9,6 @@
 <body>
     <div style="margin-bottom: 10px;">
         予約追加:<input type="button" value="追加">
-
     </div>
     <div style="margin-bottom: 10px;">
         <form>
@@ -34,7 +34,8 @@
             </tbody>
         </table>
     </div>
-
-    <a href="./index.html" style="float:right"><input type="button" value="トップページへ"></a>
+	<form action="" method="post">
+	<input type="submit" name="home" value="トップページ">
+	</form>
 </body>
 </html>
