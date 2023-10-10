@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class OutputContoroller
  */
 @WebServlet("/output")
-public class OutputContoroller extends HttpServlet {
+public class OutputSceneContoroller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String viewName = "/WEB-INF/views/input/output.html";
        
