@@ -1,41 +1,63 @@
-<%@ page contentType="text/html;charset=UTF-8"%>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>順番待ち確認システム</title>
-</head>
-<body>
-    <div style="margin-bottom: 10px;">
-        予約追加:<input type="button" value="追加">
-    </div>
-    <div style="margin-bottom: 10px;">
-        <form>
-            受け取り完了:<input type="text">
-            <input type="button" value="受け取り完了">    
+<%@ page contentType="text/html;charset=UTF-8" %>
+    <!DOCTYPE html>
+    <html lang="ja">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>順番待ち確認システム</title>
+    </head>
+
+    <body>
+        <!-- 追加 -->
+        <form action="" method="post">
+            <p>
+                <label>予約追加:
+                    <input type="text" name="append" placeholder="注文する個数">
+                    <input type="submit" name="append" value="追加">
+                </label>
+            </p>
         </form>
-    </div>
-    <div style="margin-bottom: 10px;">
-        <form>
-            キャンセル:<input type="text">
-            <input type="button" value="キャンセル">    
+        
+        <!-- 調理完了 -->
+        <form action="" method="post">
+            <p>
+                <label>調理完了:
+                    <input type="text" name="complate" placeholder="調理完了番号">
+                    <input type="submit" name="complate" value="調理完了！">
+                </label>
+            </p>
         </form>
-    </div>
-    <div style="margin-bottom: 10px;">
-        <table style="text-align: center;">
-            <!-- <caption>順番待ちリスト</caption> -->
-            <thead>
-                <tr><th>予約番号</th></tr>
-            </thead>
-            <tbody>
-             <tr><td>1</td></tr>
-             <tr><td>2</td></tr>
-            </tbody>
-        </table>
-    </div>
-	<form action="" method="post">
-	<input type="submit" name="home" value="トップページ">
-	</form>
-</body>
-</html>
+    
+        <!-- キャンセル -->
+        <form action="" method="post">
+            <p>
+                <label>キャンセル:
+                    <input type="text" name="cancel" placeholder="完了・キャンセル番号">
+                    <input type="submit" name="cancel" value="キャンセル">
+                </label>
+            </p>
+        </form>
+
+        <div style="margin-bottom: 10px;">
+            <table style="text-align: center;">
+                <thead>
+                    <tr>
+                        <th>予約番号</th>
+                        <th>注文個数</th>
+                        <th>調理完了</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%= application.getAttribute("orderListHtml") %>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- トップページに戻る -->
+        <form action="" method="post">
+            <input type="submit" name="home" value="トップページ">
+        </form>
+    </body>
+
+    </html>
