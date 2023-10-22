@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import application.model.InputSceneHtml;
 import application.model.Order;
 import application.model.OrderList;
-import application.model.OrderListHtml;
 import application.service.InputMonitor;
 
 @WebServlet("/input")
@@ -28,7 +28,6 @@ public class InputSceneController extends HttpServlet {
 	/*
 	 * 注文関連
 	 */
-	//FIXME トップページに戻ると状況がリセットされるので修正
 	private OrderList orderList = OrderList.getInstanse(); //注文詳細を格納するリスト
 	private int orderNum = 1; //注文番号
 	
@@ -58,8 +57,6 @@ public class InputSceneController extends HttpServlet {
 					System.out.println("append:" + request.getParameter("append"));
 					
 					String inputStr = request.getParameter("append");
-					//FIXME 数字以外が入力できるので修正
-					//FIXME 0文字で送信できるので修正
 					/*
 					 * 入力された文字列が1文字以上かつ数字の時にリストに追加する
 					 */
@@ -107,7 +104,7 @@ public class InputSceneController extends HttpServlet {
 		/*
 		 * ページ表示
 		 */
-		orderListHtml = new OrderListHtml().createTable(orderList);
+		orderListHtml = new InputSceneHtml().createTable(orderList);
 		sc.setAttribute("orderListHtml", orderListHtml);
 		RequestDispatcher dispatch = request.getRequestDispatcher(inputPage);
 		dispatch.forward(request, response);

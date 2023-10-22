@@ -1,6 +1,6 @@
 package application.model;
 
-public class OrderListHtml {
+public class InputSceneHtml {
 	public String createTable(OrderList orderList) {
 		StringBuilder sb = new StringBuilder();
 		
