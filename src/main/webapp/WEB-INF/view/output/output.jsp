@@ -9,34 +9,32 @@
     </head>
 
     <body>
-        <p>現在の順番待ちの人数</p>
-        <p>
-            <%= application.getAttribute("orderCount") %>人
-        </p>
-
-        <table border="1">
+        <table border="1" style="float: left;">
             <!-- <caption>順番待ちリスト</caption> -->
-            <thead>
+            <thead style="color: blue;">
                 <tr>
                     <th>調理中！</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="color: blue;">
                 <%= application.getAttribute("cookingNowList") %>
             </tbody>
         </table>
 
         <table border="1">
             <!-- <caption>調理完了リスト</caption> -->
-            <thead>
+            <thead style="color: pink;">
                 <tr>
                     <th>調理完了!</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="color: pink;">
                 <%= application.getAttribute("finishedCookingList") %>
             </tbody>
         </table>
+        <footer style="position: absolute; bottom: 0px; margin-bottom: 10px;">
+            <h2>現在<%= application.getAttribute("orderCount") %>人待ち</h2>
+            <h2>番号をご確認ください</h2>
+        </footer>
     </body>
-
-    </html>
+</html>

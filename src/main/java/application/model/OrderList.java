@@ -25,6 +25,16 @@ public class OrderList extends ArrayList<Order>{
 		}
 		return -1;
 	}
+	
+	public int countCook(boolean isFinished) {
+		int c = 0;
+		for(int i = 0; i < this.size(); i++) {
+			if(this.get(i).isCooked() == isFinished) {
+				c++;
+			}
+		}
+		return c;
+	}
 
 	public static OrderList getInstanse() {
 		return orderList;

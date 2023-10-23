@@ -26,7 +26,7 @@ public class OutputSceneContoroller extends HttpServlet {
 		/*
 		 * ページ表示
 		 */
-		sc.setAttribute("orderCount", orderList.size());
+		sc.setAttribute("orderCount", orderList.countCook(false));
 		sc.setAttribute("cookingNowList",new OutputSceneHtml().createCookingNowList(orderList));
 		sc.setAttribute("finishedCookingList",new OutputSceneHtml().createFinishedCookingList(orderList));
 		RequestDispatcher dispatch = request.getRequestDispatcher(viewName);
