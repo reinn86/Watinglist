@@ -28,19 +28,29 @@
                 </label>
             </p>
         </form>
+
+        <!-- 完了-->
+        <form action="" method="post">
+            <p>
+                <label>完了:
+                    <input type="text" name="cancel" placeholder="完了番号">
+                    <input type="submit" name="cancel" value="完了">
+                </label>
+            </p>
+        </form>
     
         <!-- キャンセル -->
         <form action="" method="post">
             <p>
                 <label>キャンセル:
-                    <input type="text" name="cancel" placeholder="完了・キャンセル番号">
-                    <input type="submit" name="cancel" value="キャンセル">
+                    <input type="text" name="cancel" placeholder="キャンセル番号">
+                    <input type="submit" name="cancel" value="キャンセル" style="background-color: RED;">
                 </label>
             </p>
         </form>
 
         <div style="margin-bottom: 10px;">
-            <table style="text-align: center;">
+            <table border="solid" style="text-align: center;">
                 <thead>
                     <tr>
                         <th>予約番号</th>
@@ -53,6 +63,7 @@
                 </tbody>
             </table>
         </div>
+        <%= application.getAttribute("orderListHtml") %>
 
         <!-- トップページに戻る -->
         <form action="" method="post">

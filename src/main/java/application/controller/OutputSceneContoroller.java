@@ -26,6 +26,7 @@ public class OutputSceneContoroller extends HttpServlet {
 		/*
 		 * ページ表示
 		 */
+		//TODO 番号が一定の件数になったときに折り返す機能の追加
 		sc.setAttribute("orderCount", orderList.countCook(false));
 		sc.setAttribute("cookingNowList",new OutputSceneHtml().createCookingNowList(orderList));
 		sc.setAttribute("finishedCookingList",new OutputSceneHtml().createFinishedCookingList(orderList));

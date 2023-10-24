@@ -36,7 +36,8 @@ public class InputSceneController extends HttpServlet {
 	 */
 	private String orderListHtml = "";
 	private InputMonitor im = new InputMonitor(); //入力の条件
-	
+	//TODO アプリが落ちたとき用にログ機能の追加
+	//TODO エラーページの追加
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ServletContext sc = request.getServletContext();
@@ -63,7 +64,7 @@ public class InputSceneController extends HttpServlet {
 					if(!im.isEmpty(inputStr) && im.isInteger(inputStr)) {
 						int orderCount = Integer.parseInt(inputStr); //注文個数
 						orderList.add(new Order(orderNum,orderCount)); 
-						orderNum++;	
+						orderNum++;
 					} else {
 						//TODO 赤文字で値が不正の旨を伝える
 					}

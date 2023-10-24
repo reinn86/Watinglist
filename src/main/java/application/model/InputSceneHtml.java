@@ -5,7 +5,11 @@ public class InputSceneHtml {
 		StringBuilder sb = new StringBuilder();
 		
 		for(int i = 0; i < orderList.size(); i++) {
-			sb.append("<tr>");
+			if(i%2 ==0) {
+				sb.append("<tr style=\"background-color:gray;\">");	
+			} else {
+				sb.append("<tr>");
+			}
 			sb.append("<td>");
 			sb.append(orderList.get(i).getOrderNumber());
 			sb.append("</td><td>");
