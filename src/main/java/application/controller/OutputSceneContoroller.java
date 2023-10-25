@@ -36,8 +36,9 @@ public class OutputSceneContoroller extends HttpServlet {
 				cookingNowList.add(orderList.get(i));
 			}
 		}
+		
 		for(int i = 0; i < orderList.size(); i++) {
-			if(orderList.get(i).isCooked() && cookingCompList.size() <= 10) {
+			if(orderList.get(i).isCooked() && i < 10) {
 				cookingCompList.add(orderList.get(i));
 			}
 		}
@@ -45,10 +46,9 @@ public class OutputSceneContoroller extends HttpServlet {
 		/*
 		 * ページ表示
 		 */
-		//TODO 番号が一定の件数になったときに折り返す機能の追加
 		sc.setAttribute("orderCount", orderList.countCook(false));
 		
-		if(orderList.size() <= 10) {
+		if(cookingNowList.size() <= 10) {
 			sc.setAttribute("cookingNowList1",new OutputSceneHtml().createCookingNowList(orderList));
 			sc.setAttribute("cookingNowList2","");
 		}
@@ -65,7 +65,7 @@ public class OutputSceneContoroller extends HttpServlet {
 			sc.setAttribute("cookingNowList1",new OutputSceneHtml().createCookingNowList(orderList1));
 			sc.setAttribute("cookingNowList2",new OutputSceneHtml().createCookingNowList(orderList2));
 		}
-		sc.setAttribute("finishedCookingList",new OutputSceneHtml().createFinishedCookingList(orderList));
+		sc.setAttribute("finishedCookingList",new OutputSceneHtml().createFinishedCookingList(cookingCompList));
 		RequestDispatcher dispatch = request.getRequestDispatcher(viewName);
 		dispatch.forward(request, response);
 	}
