@@ -81,6 +81,19 @@ public class InputSceneController extends HttpServlet {
 						//TODO 赤文字で値が不正の旨を伝える
 					}
 				}
+				case "receiptComplete" -> {
+					System.out.println("receiptComplete:" + request.getParameter("receiptComplete"));
+					
+					String inputStr = request.getParameter("receiptComplete");
+					if(!im.isEmpty(inputStr) && im.isInteger(inputStr)) {
+						int cancelOrderNum = Integer.parseInt(inputStr); //キャンセル注文番号
+						
+						orderList.receiptComplete(cancelOrderNum);
+					} else {
+						//TODO 赤文字で値が不正の旨を伝える
+						//TODO 存在しない注文番号が入力されたときにその旨を伝える
+					}
+				}
 				case "cancel" -> {
 					System.out.println("cancel:" + request.getParameter("cancel"));
 					
@@ -106,6 +119,8 @@ public class InputSceneController extends HttpServlet {
 		 */
 		orderListHtml = new InputSceneHtml().createTable(orderList);
 		sc.setAttribute("orderListHtml", orderListHtml);
+		sc.setAttribute("unitSales", String.valueOf(OrderList.getCompCount()));
+		sc.setAttribute("priceSum", String.valueOf(OrderList.getCompCount() * 350));
 		RequestDispatcher dispatch = request.getRequestDispatcher(inputPage);
 		dispatch.forward(request, response);
 	}
