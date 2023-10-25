@@ -6,26 +6,27 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>順番待ち確認システム</title>
+        <link rel="stylesheet" type="text/css" href="webapp/WEB-INF/lib/style.css">
     </head>
 
     <body style="width: 100%;">
-        <table style="float: left; width: 25%;">
+        <table style="float: left; width: 66%;height: 100px; overflow: scroll; border: 1px solid;margin-right: 1px;">
             <!-- <caption>順番待ちリスト</caption> -->
-            <thead style="background-color: blue; color: white; font-size: 2.5rem;">
+            <thead style="background-color: blue; color: white; width: 100%; font-size: 2.5rem;">
                 <tr>
-                    <th>調理中！</th>
+                    <th>現在 <%= application.getAttribute("orderCount") %>人 待ち</th>
                 </tr>
             </thead>
-            <tbody style="color: blue; font-size: 2.5rem;">
+            <tbody style="color: blue; font-size: 2.5rem;width: 100%;">
                 <%= application.getAttribute("cookingNowList") %>
             </tbody>
         </table>
 
-        <table style="width: 25%;">
+        <table style="width: 33%;border: 1px solid;">
             <!-- <caption>調理完了リスト</caption> -->
             <thead style="background-color: pink; color: white; font-size: 2.5rem;">
                 <tr>
-                    <th>調理完了!</th>
+                    <th>完成しました!</th>
                 </tr>
             </thead>
             <tbody style="color: pink; font-size: 2.5rem;">

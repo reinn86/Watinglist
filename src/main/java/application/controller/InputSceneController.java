@@ -44,7 +44,6 @@ public class InputSceneController extends HttpServlet {
 		
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; UTF-8");
-		
 		/*
 		 * リクエスト判定
 		 */
