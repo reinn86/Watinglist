@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.uzumaki_border {
+    /* border-image-source: url(./assets/images/uzumaki_bishii.png); */
+    width: 100%;
+    height: 82px;
+    background-repeat: repeat-x;
+}
+
+.waiting_table {
+    width: 66%;
+    height: 60%;
+    border: solid 1px;
+    float: left;
+}
+
+.waiting_table>thead {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    font-size: 2.5rem;
+}
+.waiting_table>tbody {
+    color: blue;
+    font-size: 2.5rem;
+}
+
+/* .wating_number_tr {
+    color: blue;
+    font-size: 2.5rem;
+} */
+
+.wating_number_th {
+    text-align: left;
+    border-bottom: 1px solid;
+}
+
+.cooked_table {
+    width: 33%;
+    border: 1px solid;
+}

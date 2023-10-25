@@ -1,7 +1,9 @@
 package application.model;
 
+import java.util.ArrayList;
+
 public class InputSceneHtml {
-	public String createTable(OrderList orderList) {
+	public String createTable(ArrayList<Order> orderList) {
 		StringBuilder sb = new StringBuilder();
 		
 		for(int i = 0; i < orderList.size(); i++) {

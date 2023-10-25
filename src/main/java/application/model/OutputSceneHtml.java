@@ -1,20 +1,18 @@
 package application.model;
 
+import java.util.ArrayList;
+
 public class OutputSceneHtml {
-	public String createCookingNowList(OrderList orderList) {
+	public String createCookingNowList(ArrayList<Order> orderList) {
 		StringBuilder sb = new StringBuilder();
 		int c = 0;
 		for(int i = 0; i < orderList.size(); i++) {
 			if(!orderList.get(i).isCooked()) {
 				c++;
-				if(c % 10 != 0) {
-					sb.append("<tr  style=\"width: 33%;\">");
-				} else {
-					sb.append("<tr  style=\"width: 33%;\"float=\"right\">");
-				}
-				sb.append("<td>");
+				sb.append("<tr class=\"wating_number_tr\">");
+				sb.append("<th class=\"wating_number_th\">");
 				sb.append(orderList.get(i).getOrderNumber());
-				sb.append("</td>");
+				sb.append("</th>");
 				sb.append("</tr>");	
 			}
 		}

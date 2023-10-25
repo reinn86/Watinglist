@@ -6,12 +6,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>順番待ち確認システム</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./assets/css/styles.css">
     </head>
 
-    <body style="width: 100%;">
-        <%= request.getContextPath() %>
-        
+    <body style="width: 100%;">        
         <div style="margin-bottom: 10px; width:50%;height: 800px; float: left; overflow: scroll;">
             <table border="solid" style="text-align: center; width: 100%;">
                 <thead style="width: 100%;">
