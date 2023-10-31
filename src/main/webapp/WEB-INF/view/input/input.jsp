@@ -29,17 +29,17 @@
             <form action="" method="post" style="margin-top: 10px;">
                 <p>
                     <label>予約追加:
-                        <input type="text" name="append" placeholder="注文する個数">
+                        <input type="text" name="append" placeholder="注文する個数" tabindex="1">
                         <input type="submit" name="append" value="追加">
                     </label>
                 </p>
             </form>
             
             <!-- 調理完了 -->
-            <form action="" method="post" style="margin-top: 10px;">
+            <form action="" method="post" style="margin-top: 50px;">
                 <p>
                     <label>調理完了:
-                        <input type="text" name="complate" placeholder="調理完了番号">
+                        <input type="text" name="complate" placeholder="調理完了番号" tabindex="2">
                         <input type="submit" name="complate" value="調理完了！">
                     </label>
                 </p>
@@ -49,7 +49,7 @@
             <form action="" method="post" style="margin-top: 10px;">
                 <p>
                     <label>受け取り済み:
-                        <input type="text" name="receiptComplete" placeholder="受け取り済み番号">
+                        <input type="text" name="receiptComplete" placeholder="受け取り済み番号" tabindex="3">
                         <input type="submit" name="receiptComplete" value="完了">
                     </label>
                 </p>
@@ -59,14 +59,14 @@
             <form action="" method="post" style="margin-top: 10px;">
                 <p>
                     <label>キャンセル:
-                        <input type="text" name="cancel" placeholder="キャンセル番号">
+                        <input type="text" name="cancel" placeholder="キャンセル番号" tabindex="4">
                         <input type="submit" name="cancel" value="キャンセル" style="background-color: RED;">
                     </label>
                 </p>
             </form>
             <div style="margin-top: 200px; border: 1px solid;">
             <p>販売個数<strong style="font-size: 50pt;margin-top: 200px;"><%= application.getAttribute("unitSales") %></strong>個</p>
-            <p>現在の売り上げ<strong style="font-size: 50pt;"><%= application.getAttribute("priceSum") %></strong>円</p>
+            <!-- <p>現在の売り上げ<strong style="font-size: 50pt;"><%= application.getAttribute("priceSum") %></strong>円</p> -->
             <p>あくまでおおよそです</p>
             </div>
             <!-- トップページに戻る

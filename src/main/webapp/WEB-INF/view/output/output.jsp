@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="refresh" content="2; URL=http://localhost:8080/WatingList/output">
+        <meta http-equiv="refresh" content="10; URL=https://4e63-122-216-134-29.ngrok-free.app/WatingList/output">
         <title>順番待ち確認システム</title>
         <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
     </head>

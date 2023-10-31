@@ -1,5 +1,6 @@
 package application.controller;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Enumeration;
 
@@ -36,6 +37,13 @@ public class InputSceneController extends HttpServlet {
 	 */
 	private String orderListHtml = "";
 	private InputMonitor im = new InputMonitor(); //入力の条件
+	
+	/*
+	 * csv
+	 */
+	private String csvName = "./data.csv";
+	private FileReader fr;
+	
 	//TODO アプリが落ちたとき用にログ機能の追加
 	//TODO エラーページの追加
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -44,6 +52,7 @@ public class InputSceneController extends HttpServlet {
 		
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; UTF-8");
+		
 		/*
 		 * リクエスト判定
 		 */
